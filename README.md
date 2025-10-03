@@ -7,7 +7,7 @@ A Python client for sending messages to Mattermost using incoming webhooks. This
 Use pip to install the package:
 
 ```bash
-pip install mattermost-py
+pip install git+https://github.com/anshulthakur/mm-py-webhooks.git
 ```
 
 ## Usage
