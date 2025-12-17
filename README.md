@@ -5,7 +5,7 @@ A simple Python client for sending messages to Mattermost using incoming webhook
 ## Installation
 
 ```bash
-pip install mattermost-client
+pip install mattermost-client-py
 ```
 
 ## Usage
