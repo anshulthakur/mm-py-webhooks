@@ -17,7 +17,7 @@ First, you need to create an incoming webhook in your Mattermost instance. You c
 The synchronous client is useful for simple applications that don't require asynchronous operations.
 
 ```python
-from mattermost_client.client import SyncMattermostClient
+from mattermost_client import SyncMattermostClient
 
 # Initialize the client with your Mattermost webhook URL
 client = SyncMattermostClient("https://your-mattermost-instance.com/hooks/your_webhook_token")
@@ -71,14 +71,14 @@ The asynchronous client is ideal for applications using `asyncio`.
 
 ```python
 import asyncio
-from mattermost_client.client import AsyncMattermostClient
+from mattermost_client import AsyncMattermostClient
 
 async def main():
     # Initialize the client with your Mattermost webhook URL
     mm = AsyncMattermostClient("https://your-mattermost-instance.com/hooks/your_webhook_token")
 
     # Send a message asynchronously
-    response = await mm.send_message_async("Hello, Mattermost! (async)")
+    response = await mm.send_message("Hello, Mattermost! (async)")
     print(response)
 
 if __name__ == "__main__":
