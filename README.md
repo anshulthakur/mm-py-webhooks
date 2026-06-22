@@ -85,6 +85,47 @@ if __name__ == "__main__":
     asyncio.run(main())
 ```
 
+## Bot Token & Direct Messaging (Personal Messages)
+
+You can also send personal direct messages to individual users using a bot account token.
+
+### Synchronous Client
+
+```python
+from mattermost_client import SyncMattermostClient
+
+# Initialize with the Mattermost server base URL and your Bot personal access token
+client = SyncMattermostClient(
+    server_url="https://your-mattermost-instance.com",
+    bot_token="your_bot_account_token"
+)
+
+# Send a personal message to a user by their username (with or without '@') or user ID
+response = client.send_direct_message(recipient="john.doe", text="Hello from bot!")
+print(response)
+```
+
+### Asynchronous Client
+
+```python
+import asyncio
+from mattermost_client import AsyncMattermostClient
+
+async def main():
+    # Initialize with the Mattermost server base URL and your Bot personal access token
+    client = AsyncMattermostClient(
+        server_url="https://your-mattermost-instance.com",
+        bot_token="your_bot_account_token"
+    )
+
+    # Send a personal message asynchronously
+    response = await client.send_direct_message(recipient="john.doe", text="Hello from bot! (async)")
+    print(response)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request on GitHub.
